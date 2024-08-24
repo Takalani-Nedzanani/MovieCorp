@@ -1,0 +1,492 @@
+﻿
+
+
+
+
+
+@page
+@model CheckOutModel
+@{
+    ViewData["Title"] = "CheckOut page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Method Checkout</title>
+    <style>
+       
+
+        .check-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        .card-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .card-icons img {
+                width: 35px;
+                height: 25px;
+                object-fit: contain;
+                opacity: 0.5;
+                transition: opacity 0.3s ease;
+            }
+
+                .card-icons img:hover {
+                    opacity: 1;
+                }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="check-container">
+        <h1>Payment Method Checkout</h1>
+        <form>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" id="expiration-date" name="expiration-date" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="number" id="cvv" name="cvv" required>
+
+            <label for="cardholder-name">Cardholder Name:</label>
+            <input type="text" id="cardholder-name" name="cardholder-name" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select a country</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="uk">South Africa</option>
+            </select>
+
+            <input type="submit" value="Pay">
+
+            <div class="card-icons">
+                <img src="https://cdn-icons-png.flaticon.com/128/349/349221.png" alt="Visa">
+                <img src="https://img.icons8.com/?size=1x&id=13610&format=png" alt="Mastercard">
+                <img src="https://cdn-icons-png.flaticon.com/128/174/174861.png" alt="Paypal">
+                <img src="https://img.icons8.com/?size=1x&id=63192&format=png" alt="Bitcoin">
+            </div>
+
+            <div class="error-message">
+                <!-- Error messages can be displayed dynamically using JavaScript -->
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple HTML HomePage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style type="text/css">
+   
+
+  
+
+ 
+
+    
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+* {
+  box-sizing: border-box;
+}
+.body {
+  /*width: 100vw;
+  height: 100vh;*/
+  /*margin: 0;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    
+}
+
+
+
+
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  perspective: 2500px;
+  margin: 0 50px;
+  background-image: linear-gradient( to top, rgb(9 92 218 / 100%) 100%, rgb(26 43 192 / 0%) 100%, rgb(61 100 215 / 0%) 100% );
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+h1{
+  color: aliceblue;
+}
+p{
+   text-align: center;
+   color:aliceblue;
+   justify-content:center;
+}
+
+  
+  </style>
+</head>
+
+<body>
+ 
+ <h1 align="center">Welcome to MovieCorp</h1>
+
+ <div class="body">
+     <div>
+            <a href="https://www.imdb.com/video/vi289916185/?ref_=ext_shr_lnk" alt="JOHN WICK 4" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/44/a3/f4/44a3f48a0e58a33b80dedca726e8c4b6.jpg" class="cover-image" />
+                    </div>
+                 
+                    <img src="https://i.pinimg.com/564x/c8/19/06/c8190678b07a6c9daf0f328489e0d702.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>John Wick uncovers a path<br /> to <br />defeating The High Table.</p>
+
+     </div>
+
+
+        <div>
+            <a href="https://www.imdb.com/video/vi2052375577/?ref_=ext_shr_lnk" alt="FAST X" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/fd/45/6a/fd456a9467432d6366073549e7dbcd5c.jpg" class="cover-image" />
+                    </div>
+                  
+                    <img src="https://i.pinimg.com/564x/9c/59/20/9c5920d5720d7ba34ebf02096d6cc94e.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>Family <br />is<br /> everything</p>
+
+        </div>
+
+        <div>
+            <a href="https://www.imdb.com/video/vi191412761/?ref_=ext_shr_lnk" alt="AFTER WE FELL" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/3b/c2/fd/3bc2fd40b88c94c9d23531006db8a89b.jpg" class="cover-image" />
+                    </div>
+                    
+                    <img src="https://i.pinimg.com/564x/a2/56/a4/a256a4b70669b136b3a4fb7f6c35e779.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>A dedicated college student<br /> falls for a dark <br />and mysterious rebel.</p>
+
+        </div>
+
+        <div>
+            <a href="https://www.imdb.com/video/vi1028899865/?ref_=ext_shr_lnk" alt="EXTRACTION" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/42/fb/68/42fb68748cc9a1483ec0656f659e3df8.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/564x/69/d0/d8/69d0d8ad60df229bfb2fdb2560c6ab4e.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>After barely surviving his grievous<br /> wounds from his mission in Dhaka, Bangladesh, Tyler Rake is back.</p>
+
+        </div>
+        <div>
+            <a href="https://www.imdb.com/video/vi3607938073/?ref_=ext_shr_lnk" alt="GHOSTED" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/bc/22/9e/bc229eec98d8392c4387c4fb85262ba6.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/564x/30/6a/55/306a5567200d6d38c99271fa7dbfdc5d.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>Cole falls head over heels <br />for <br />enigmatic Sadie</p>
+
+        </div>
+       
+
+       
+
+ </div>
+    <div class="body">
+        <div>
+            <a href="https://www.imdb.com/video/vi3315844377/?ref_=ext_shr_lnk" alt="BLACK ADAM" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/d8/8a/60/d88a60b4f145e7174775d9b82ca9cf01.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/564x/81/8e/b8/818eb813a249196a1ab1f93e6b00deca.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>Nearly 5,000 years after he was <br />bestowed<br /> with the almighty powers of the<br /> Egyptian gods-and imprisoned. </p>
+
+        </div>
+
+
+        <div>
+            <a href="https://www.imdb.com/video/vi1032176153/?ref_=ext_shr_lnk" alt="HUSTLE" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/a6/20/67/a6206759173a80d14f4737454cb93e44.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/736x/d1/61/97/d161979722afaf8a1dcfe629f9c00177.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>A washed-up basketball scout <br />discovers <br />a phenomenal street ball<br /> player.</p>
+
+        </div>
+
+        <div>
+            <a href="https://www.imdb.com/video/vi941736473/?ref_=ext_shr_lnk" alt="THE GRAY MAN" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/7e/10/12/7e101251d7c5f8d5c7e791eaf2304870.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/564x/ab/73/46/ab7346f27a877d2f035e34140d90cf51.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>When a shadowy CIA agent <br />uncovers damning agency secrets, <br />he's hunted across the<br /> globe.</p> 
+
+        </div>
+
+        <div>
+            <a href="https://www.imdb.com/video/vi1362346521/?ref_=ext_shr_lnk" alt="THE WOMAN KING" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/78/59/24/785924f300cad10748810015a5c76bec.jpg" class="cover-image" />
+                    </div>
+                  
+                    <img src="https://i.pinimg.com/564x/d1/b8/0c/d1b80c8bde7b4597723086e09d662e7d.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>A historical epic inspired<br /> by the true events <br />that happened in The Kingdom of Dahomey.</p>
+
+        </div>
+        <div>
+            <a href="https://www.imdb.com/video/vi2813048345/?ref_=ext_shr_lnk" alt="MOANA" target="_blank">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="https://i.pinimg.com/564x/ee/a3/77/eea3778e1d386373ab7fe4bc58095d41.jpg" class="cover-image" />
+                    </div>
+                   
+                    <img src="https://i.pinimg.com/564x/42/02/bf/4202bf77d56386a0f8e80382c1fa9a95.jpg" class="character" />
+
+                </div>
+
+            </a>
+            <p>  A young woman uses her <br />navigational<br /> talents to set sail for a fabled <br />island.</p>
+
+        </div>
+
+
+
+
+    </div>
+  
+
+   
+
+ 
+
+</body>
+
+</html>*@
+

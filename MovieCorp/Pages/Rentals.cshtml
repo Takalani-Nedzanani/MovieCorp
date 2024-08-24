@@ -1,0 +1,291 @@
+﻿
+
+
+
+
+
+
+@page
+@model RentalModel
+@{
+    ViewData["Title"] = "Movie Rentals";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML HomePage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style type="text/css">
+
+        
+
+        /*movies carousels*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: arial, verdana, tahoma;
+        }
+
+
+
+        .accordian {
+            width: 805px;
+            height: 400px;
+            overflow: hidden;
+            margin: 100px auto;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+            -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+            -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+        }
+
+
+            .accordian ul {
+                width: 1200px;
+            }
+
+            .accordian li {
+                position: relative;
+                display: block;
+                width: 160px;
+                float: left;
+                border-left: 1px solid #888;
+                box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+                -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+                -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+            }
+
+
+            .accordian ul:hover li {
+                width: 40px;
+            }
+
+
+            .accordian ul li:hover {
+                width: 640px;
+            }
+
+
+            .accordian li img {
+                display: block;
+            }
+
+
+        .image_title {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 640px;
+        }
+
+            .image_title a {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+                padding: 20px;
+                font-size: 16px;
+            }
+
+
+
+
+    
+
+
+    </style>
+</head>
+
+<body>
+    
+    <h2 align="center" style="color:white">Promotions</h2>
+
+    <img src=" https://img.freepik.com/free-psd/sunday-sale-banner-discount-promotion-with-editable-text_47987-13010.jpg?size=626&ext=jpg&ga=GA1.2.283001367.1684587352&semt=ais" height="150" width="400" />
+    <img src="https://img.freepik.com/free-photo/sale-with-special-discount-chairs_23-2150040379.jpg?w=996&t=st=1684689014~exp=1684689614~hmac=af78607d7488ffbe36cddb10d0ad75c4da36e0b468f87678e822156d743d361a" height="150" width="400" />
+    <img src="https://t3.ftcdn.net/jpg/05/13/41/00/240_F_513410001_CMPKqU0kg093AUA9VLPuIcF8O0NUFRD4.jpg" height="150" width="400" />
+
+
+
+    <hr style="color:white" />
+
+
+    <h2 align="center" style="color:white">New Release</h2>
+    <h5 align="left" style="color:white"><i>Click on price to checkout</i></h5>
+
+
+    <div class="accordian">
+        <ul>
+            <li>
+
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut" >R55,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/d2/1e/98/d21e98f4e212a81654ef631c6d9da89a.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R110,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/a9/88/c2/a988c2e1f48fb6b2dc53c77eac1c6ee2.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R64,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/06/44/81/064481f724c0e52b73bda72dfdecd2e7.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R120,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/08/3f/62/083f6260dca7d3326170ef3b4d691b05.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R77,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/57/72/64/577264a0998c66adbf6207737a377e7d.jpg" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <hr style="color:white" />
+
+    <h2 align="center" style="color:white">Promotions</h2>
+
+    <img src="https://img.freepik.com/free-photo/sale-with-special-discount-cinema_23-2150040386.jpg?size=626&ext=jpg&ga=GA1.2.283001367.1684587352&semt=ais" height="150" width="400" />
+    <img src="https://img.freepik.com/free-vector/set-red-sale-banners_23-2147556312.jpg?size=626&ext=jpg&ga=GA1.2.283001367.1684587352&semt=ais" height="150" width="400" />
+    <img src=" https://img.freepik.com/free-photo/movies-entertainment-events-digital-media_53876-125085.jpg?size=626&ext=jpg&ga=GA1.2.283001367.1684587352&semt=ais" height="150" width="400" />
+   
+    <hr style="color:white" />
+
+
+    <h2 align="center" style="color:white">Classics</h2>
+    <div class="accordian">
+        <ul>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R20,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/60/c7/9e/60c79eae4571d904e48c2661f7724b87.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R30,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/4a/dd/ed/4addedc6fe02164a899f16dfcc5fde8c.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R60,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/736x/b4/96/91/b4969186402d40ba5a17becfa9eb35f0.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R45,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/91/fb/44/91fb449eb0e96105eb461a4f78f7a772.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R89,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/7f/b9/39/7fb939ebacab9fea22b5554fb4ba5b4e.jpg" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <hr style="color:white" />
+    <h2 align="center" style="color:white">Promotions</h2>
+    <img src="https://img.freepik.com/premium-vector/discount-coupon-set-movies-with-food-combo-offers_1302-11347.jpg?w=1060" height="150" width="400" />
+    <img src="https://img.freepik.com/free-photo/calling-with-speaker-popcorn-caucasian-man-s-portrait-isolated-blue-wall-pink-neon-light_155003-37079.jpg?w=996&t=st=1684687660~exp=1684688260~hmac=d5240ffb5a8757d949dd0ff0e94401b6da9b636689a9bc739a02ffc137cdf5a0" height="150" width="400" />
+    <img src=" https://img.freepik.com/free-psd/2x1-scary-movie-promotion-3d-illustration_1419-2559.jpg?w=740&t=st=1684687774~exp=1684688374~hmac=10b5698994f235f8aa81e49c9c638bed6d4d6068ca912de7c87703b3906b5d85" height="150" width="400" />
+    
+    <hr style="color:white" />
+
+
+    <h2 align="center" style="color:white">Hot Release</h2>
+    <div class="accordian">
+        <ul>
+            <li>
+
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R250,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/7e/19/e3/7e19e33628ab7a20224fc05c2b28ffe3.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R125,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/dc/80/39/dc803978630029a69ac3714b3a9bf022.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R99,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/dd/56/09/dd5609857eda6e2f6f6856bd83b2abbf.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R300,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/ec/01/6e/ec016e5fbc436724280f7819ea6aadb1.jpg" />
+                </a>
+            </li>
+            <li>
+                <div class="image_title">
+                    <a href="#"><a class="nav-link text-warning" asp-area="" asp-page="/CheckOut">R210,00</a></a>
+                </div>
+                <a href="#">
+                    <img src="https://i.pinimg.com/564x/77/bc/2b/77bc2bb44503c48990aaf93dad09a235.jpg" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    
+    
+
+</body>
+
+ </html>

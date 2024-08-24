@@ -1,0 +1,128 @@
+﻿
+
+
+
+
+@page
+@model ContactUsModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <link rel="stylesheet" type="text/css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        h1 {
+            margin: 0;
+            color:white;
+        }
+        h2{
+            color:white;
+        }
+        
+       
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .contact-section {
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p style="color:white">Have a question or need assistance? We're here to help. Fill out the form below or reach out to us using the provided contact information.</p>
+            <form>
+                <div class="form-group">
+                    <label style ="color:white" for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label style="color:white" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label style="color:white" for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Phone:</strong> +27 81-006-1527</p>
+                <p><strong>Email:</strong> info@MovieCorp.com</p>
+                <p><strong>Address:</strong> 123 President Brand Street, Willows, Bloemfontein, South Africa</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
